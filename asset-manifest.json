@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/empapp/static/css/main.95af0c0e.css",
+    "main.js": "/empapp/static/js/main.7f568e2d.js",
+    "static/js/453.427b141f.chunk.js": "/empapp/static/js/453.427b141f.chunk.js",
+    "index.html": "/empapp/index.html",
+    "main.95af0c0e.css.map": "/empapp/static/css/main.95af0c0e.css.map",
+    "main.7f568e2d.js.map": "/empapp/static/js/main.7f568e2d.js.map",
+    "453.427b141f.chunk.js.map": "/empapp/static/js/453.427b141f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.95af0c0e.css",
+    "static/js/main.7f568e2d.js"
+  ]
+}
