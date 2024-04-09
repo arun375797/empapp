@@ -11,7 +11,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-const Dashboard = () => {
+const Home = () => {
   const [dataset, setDataset] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
@@ -30,20 +30,7 @@ const Dashboard = () => {
       });
   }, []);
 
-  const handleUpdate = async (id) => {
-    console.log("Updating blog with ID:", id);
-    navigate(`/update/${id}`);
-  };
-
-  const handleDelete = async (id) => {
-    try {
-      await axios.delete(`https://emp-fhhr.onrender.com/admin/employees/${id}`);
-      // Remove the deleted item from the dataset
-      setDataset(dataset.filter((item) => item._id !== id));
-    } catch (error) {
-      console.error("Error while deleting data:", error);
-    }
-  };
+ 
 
   return (
     <div
@@ -113,26 +100,7 @@ const Dashboard = () => {
                   >
                     Salary
                   </TableCell>
-                  <TableCell
-                    style={{
-                      color: "white",
-                      fontSize: "18px",
-                      fontWeight: "bold",
-                    }}
-                    align="center"
-                  >
-                    Edit
-                  </TableCell>
-                  <TableCell
-                    style={{
-                      color: "white",
-                      fontSize: "18px",
-                      fontWeight: "bold",
-                    }}
-                    align="center"
-                  >
-                    Delete
-                  </TableCell>
+               
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -167,48 +135,8 @@ const Dashboard = () => {
                     >
                       {row.salary}
                     </TableCell>
-                    <TableCell
-                      style={{ color: "white", fontSize: "16px" }}
-                      align="center"
-                    >
-                   <button
-  style={{
-    backgroundColor: '#135D66', // Blue background color
-    color: 'white', // White text color
-    border: 'none', // Remove border
-    padding: '8px 16px', // Add padding
-    cursor: 'pointer', // Change cursor to pointer on hover
-    borderRadius: '4px', // Add border radius
-    fontSize: '14px', // Adjust font size
-    transition: 'background-color 0.3s ease', // Add smooth transition for background color
-  }}
-  onClick={() => handleUpdate(row._id)}
->
-  Edit
-</button>
-
-                    </TableCell>
-                    <TableCell
-                      style={{ color: "white", fontSize: "16px" }}
-                      align="center"
-                    >
-                     <button
-  style={{
-    backgroundColor: '#dc3545', // Red background color
-    color: 'white', // White text color
-    border: 'none', // Remove border
-    padding: '8px 16px', // Add padding
-    cursor: 'pointer', // Change cursor to pointer on hover
-    borderRadius: '4px', // Add border radius
-    fontSize: '14px', // Adjust font size
-    transition: 'background-color 0.3s ease', // Add smooth transition for background color
-  }}
-  onClick={() => handleDelete(row._id)}
->
-  Delete
-</button>
-
-                    </TableCell>
+                  
+                   
                   </TableRow>
                 ))}
               </TableBody>
@@ -220,4 +148,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Home;
